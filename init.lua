@@ -40,7 +40,7 @@ end
 
 if auto_eat_fast then
 	minetest.register_on_mods_loaded(function()
-		if minetest.settings:get_bool("enable_touchscreen") then
+		if minetest.settings:get("enable_touchscreen") == nil then
 			if tph_eating then
 				tph_eating["eating_time"] = 0.001
 				tph_eating["eating_repeats"] = 6
