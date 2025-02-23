@@ -1,6 +1,5 @@
 local mob_difficulty2 = tonumber(minetest.settings:get("mob_difficulty2") or 0.7)
 local mob_chance_multiplier2 = tonumber(minetest.settings:get("mob_chance_multiplier2") or 0.001)
-local hudbars_bar_type2 = minetest.settings:get("hudbars_bar_type2") or "statbar_modern"
 local letter = minetest.settings:get_bool("letter") or false
 local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
 local eat_fast = minetest.settings:get_bool("eat_fast") or false
@@ -25,8 +24,6 @@ local meatblock = minetest.settings:get_bool("deco_stone_bird") or false
 minetest.settings:set("mob_difficulty", mob_difficulty2)
 
 minetest.settings:set("mob_chance_multiplier", mob_chance_multiplier2)
-
-minetest.settings:set("hudbars_bar_type", hudbars_bar_type2)
 
 if not letter then
 	minetest.register_on_newplayer(function(player)
