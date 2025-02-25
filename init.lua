@@ -7,16 +7,13 @@ local saddle = minetest.settings:get_bool("saddle") or false
 local net = minetest.settings:get_bool("net") or false
 local nametag = minetest.settings:get_bool("nametag") or false
 local leather = minetest.settings:get_bool("leather") or false
-local shears = minetest.settings:get_bool("fence_wood") or false
-local fence_wood = minetest.settings:get_bool("lava_orb") or false
+local shears = minetest.settings:get_bool("shears") or false
+local fence_wood = minetest.settings:get_bool("fence_wood") or false
 local fence_top = minetest.settings:get_bool("fence_top") or false
 local hearing_vines = minetest.settings:get_bool("hearing_vines") or false
 local protector = minetest.settings:get_bool("protector") or false
 local protector2 = minetest.settings:get_bool("protector2") or false
 local meat_raw = minetest.settings:get_bool("meat_raw") or false
-local meat = minetest.settings:get_bool("deco_stone_sun") or false
-local meatblock_raw = minetest.settings:get_bool("deco_stone_bird") or false
-local meatblock = minetest.settings:get_bool("deco_stone_bird") or false
 
 minetest.settings:set("mob_difficulty", mob_difficulty2)
 
