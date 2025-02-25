@@ -10,17 +10,11 @@ auto_eat_fast (Auto eat fast) bool true
 #    Disable or enable eat fast
 eat_fast (Eat fast) bool false
 
-#    Disable or enable Lava orb
-lava_orb (Lava orb) bool false
-
 #    Disable or enable Lasso
 lasso (Lasso) bool false
 
 #    Disable or enable Saddle
 saddle (Saddle) bool false
-
-#    Disable or enable Lava Pick
-pick_lava (Lava Pick) bool false
 
 #    Disable or enable Net
 net (Net) bool false
