@@ -2,10 +2,8 @@ local mob_difficulty2 = tonumber(minetest.settings:get("mob_difficulty2") or 0.7
 local mob_chance_multiplier2 = tonumber(minetest.settings:get("mob_chance_multiplier2") or 0.001)
 local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
 local eat_fast = minetest.settings:get_bool("eat_fast") or false
-local lava_orb = minetest.settings:get_bool("lava_orb") or false
 local lasso = minetest.settings:get_bool("lasso") or false
 local saddle = minetest.settings:get_bool("saddle") or false
-local pick_lava = minetest.settings:get_bool("pick_lava") or false
 local net = minetest.settings:get_bool("net") or false
 local nametag = minetest.settings:get_bool("nametag") or false
 local leather = minetest.settings:get_bool("leather") or false
@@ -44,20 +42,12 @@ if eat_fast then
 	end)
 end
 
-if not lava_orb then
-minetest.unregister_item("mobs:lava_orb")
-end
-
 if not lasso then
 minetest.unregister_item("mobs:lasso")
 end
 
 if not saddle then
 minetest.unregister_item("mobs:saddle")
-end
-
-if not pick_lava then
-minetest.unregister_item("mobs:pick_lava")
 end
 
 if not net then
