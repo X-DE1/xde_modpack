@@ -24,7 +24,7 @@ minetest.settings:set("mob_chance_multiplier", mob_chance_multiplier2)
 
 if auto_eat_fast then
 	minetest.register_on_mods_loaded(function()
-		if minetest.settings:get("touch_gui") then
+		if minetest.settings:get_bool("touch_gui") then
 			if tph_eating then
 				tph_eating["eating_time"] = 0.001
 				tph_eating["eating_repeats"] = 6
