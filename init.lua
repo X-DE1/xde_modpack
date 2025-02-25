@@ -1,6 +1,5 @@
 local mob_difficulty2 = tonumber(minetest.settings:get("mob_difficulty2") or 0.7)
 local mob_chance_multiplier2 = tonumber(minetest.settings:get("mob_chance_multiplier2") or 0.001)
-local letter = minetest.settings:get_bool("letter") or false
 local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
 local eat_fast = minetest.settings:get_bool("eat_fast") or false
 local lava_orb = minetest.settings:get_bool("lava_orb") or false
@@ -25,19 +24,9 @@ minetest.settings:set("mob_difficulty", mob_difficulty2)
 
 minetest.settings:set("mob_chance_multiplier", mob_chance_multiplier2)
 
-if not letter then
-	minetest.register_on_newplayer(function(player)
-		minetest.after(0.1, function()
-			if comboblock then
-				player:get_inventory():set_list("main", {})
-			end
-		end)
-	end)
-end
-
 if auto_eat_fast then
 	minetest.register_on_mods_loaded(function()
-		if minetest.settings:get("enable_touchscreen") == nil then
+		if minetest.settings:get("touch_gui") then
 			if tph_eating then
 				tph_eating["eating_time"] = 0.001
 				tph_eating["eating_repeats"] = 6
