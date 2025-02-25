@@ -4,9 +4,6 @@ mob_difficulty2 (Mob difficulty factor) float 0.7
 #    The number of blocks per mob spawn multiply by this number
 mob_chance_multiplier2 (Mob chance multiplier) float 0.001
 
-#    Disable or enable comboblock letter
-letter (Comboblock letter) bool false
-
 #    Disable or enable eat fast when touch screen is set
 auto_eat_fast (Auto eat fast) bool true
 
