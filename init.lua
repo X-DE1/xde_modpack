@@ -2,6 +2,7 @@ local mob_difficulty2 = tonumber(minetest.settings:get("mob_difficulty2") or 0.7
 local mob_chance_multiplier2 = tonumber(minetest.settings:get("mob_chance_multiplier2") or 0.001)
 local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
 local eat_fast = minetest.settings:get_bool("eat_fast") or false
+local bucket_guano = minetest.settings:get_bool("bucket_guano") or false
 local lasso = minetest.settings:get_bool("lasso") or false
 local saddle = minetest.settings:get_bool("saddle") or false
 local net = minetest.settings:get_bool("net") or false
@@ -37,6 +38,10 @@ if eat_fast then
 			tph_eating["eating_repeats"] = 6
 		end
 	end)
+end
+
+if not bucket_guano then
+minetest.unregister_item("animalia:bucket_guano")
 end
 
 if not lasso then
