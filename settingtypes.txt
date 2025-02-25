@@ -10,6 +10,9 @@ auto_eat_fast (Auto eat fast) bool true
 #    Disable or enable eat fast
 eat_fast (Eat fast) bool false
 
+#    Disable or enable Bucket guano
+bucket_guano (Bucket guano) bool false
+
 #    Disable or enable Lasso
 lasso (Lasso) bool false
 
