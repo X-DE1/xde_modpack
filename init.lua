@@ -41,25 +41,6 @@ minetest.unregister_item("x_farming:cotton")
 minetest.unregister_item("x_farming:string")
 minetest.unregister_item("x_farming:seed_cotton")
 
-minetest.register_decoration({
-	name = 'xde_modpack:cotton',
-	deco_type = 'simple',
-	place_on = {"everness:dry_dirt_with_dry_grass"},
-	sidelen = 16,
-	noise_params = {
-		offset = -0.1,
-		scale = 0.1,
-		spread = { x = 50, y = 50, z = 50 },
-		seed = 4242,
-		octaves = 3,
-		persist = 0.7
-	},
-	biomes = {"everness:baobab_savanna"},
-	y_max = 31000,
-	y_min = 1,
-	decoration = {"farming:cotton_wild"}
-})
-
 if auto_eat_fast then
 	minetest.register_on_mods_loaded(function()
 		if minetest.settings:get_bool("touch_gui") then
