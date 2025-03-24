@@ -21,6 +21,16 @@ if minetest.get_modpath("animalia") and minetest.get_modpath("x_farming") then
 	minetest.unregister_item("animalia:bucket_guano")
 end
 
+if minetest.get_modpath("animalia") then
+	minetest.register_craft({
+		output = "animalia:nametag",
+		recipe = {
+			{"default:paper", "farming:string", "dye:black"}
+		}
+	})
+	dungeon_loot.register({name = "animalia:nametag", chance = 0.6, count = {1, 3}})
+end
+
 if minetest.get_modpath("x_farming") then
 	minetest.register_craft({
 		output = "x_farming:seed_icefishing",
@@ -42,6 +52,7 @@ if minetest.get_modpath("x_farming") then
 	minetest.unregister_item("x_farming:cotton")
 	minetest.unregister_item("x_farming:string")
 	minetest.unregister_item("x_farming:seed_cotton")
+	minetest.unregister_item("x_farming:string")
 end
 
 if minetest.get_modpath("x_farming") and minetest.get_modpath("everness") then
