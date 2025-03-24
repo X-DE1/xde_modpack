@@ -18,10 +18,7 @@ if eat_fast then
 end
 
 if minetest.get_modpath("animalia") and minetest.get_modpath("x_farming") then
-	local bucket_guano = minetest.settings:get_bool("bucket_guano") or false
-	if not bucket_guano then
-		minetest.unregister_item("animalia:bucket_guano")
-	end
+	minetest.unregister_item("animalia:bucket_guano")
 end
 
 if minetest.get_modpath("x_farming") then
