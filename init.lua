@@ -31,6 +31,24 @@ if minetest.get_modpath("animalia") then
 	dungeon_loot.register({name = "animalia:nametag", chance = 0.6, count = {1, 3}})
 end
 
+if minetest.get_modpath("animalia") and minetest.get_modpath("mobs") then
+	minetest.unregister_item("mobs:lasso")
+	minetest.unregister_item("mobs:saddle")
+	minetest.unregister_item("mobs:net")
+	minetest.unregister_item("mobs:nametag")
+	minetest.unregister_item("mobs:leather")
+	minetest.unregister_item("mobs:shears")
+	minetest.unregister_item("mobs:fence_wood")
+	minetest.unregister_item("mobs:fence_top")
+	minetest.unregister_item("mobs:hearing_vines")
+	minetest.unregister_item("mobs:protector")
+	minetest.unregister_item("mobs:protector2")
+	minetest.unregister_item("mobs:meat_raw")
+	minetest.unregister_item("mobs:meat")
+	minetest.unregister_item("mobs:meatblock_raw")
+	minetest.unregister_item("mobs:meatblock")
+end
+
 if minetest.get_modpath("x_farming") then
 	minetest.register_craft({
 		output = "x_farming:seed_icefishing",
