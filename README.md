@@ -1,6 +1,6 @@
 # X-DE Modpack
 
-It adds different mods and i modified some of them to my liking.
+Add mods to fix all kinds of Minetest issues, such as not seeing what players are holding, moving your head, breaking furnaces or chests with things inside, etc. And I modify the optional mods to my liking.
 
 ## Installation
 
