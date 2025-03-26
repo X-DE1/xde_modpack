@@ -79,7 +79,7 @@ if minetest.get_modpath("x_farming") and minetest.get_modpath("everness") then
 		deco_type = 'simple',
 		place_on = {"everness:dry_dirt_with_dry_grass"},
 		sidelen = 16,
-		fill_ratio = 0.5,
+		fill_ratio = 0.005,
 		biomes = {"everness:baobab_savanna"},
 		y_max = 31000,
 		y_min = 1,
