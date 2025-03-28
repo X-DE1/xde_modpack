@@ -1,6 +1,39 @@
 local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
 local eat_fast = minetest.settings:get_bool("eat_fast") or false
 
+if minetest.get_modpath("cloudlands") and minetest.get_modpath("nether") then
+	minetest.register_craft({
+		output = "cloudlands:ancient_portalstone",
+		recipe = {
+			{"default:obsidian", "default:flint"}
+		}
+	})
+end
+
+if minetest.get_modpath("s_brewing") then
+	minetest.register_craft({
+		output = "s_brewing:boost",
+		recipe = {
+			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
+			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
+			{"default:tinblock", "default:tinblock", "default:tinblock"}
+		}
+	})
+	
+	minetest.register_craft({
+		output = "s_brewing:stand",
+		recipe = {
+			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
+			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
+			{"default:goldblock", "default:goldblock", "default:goldblock"}
+		}
+	})
+end
+
+if minetest.get_modpath("s_potions_default") and minetest.get_modpath("stamina") then
+	minetest.unregister_item("s_potions_default:jump")
+end
+
 if auto_eat_fast then
 	minetest.register_on_mods_loaded(function()
 		if minetest.settings:get_bool("touch_gui") then
