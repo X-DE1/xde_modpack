@@ -1,15 +1,6 @@
 local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
 local eat_fast = minetest.settings:get_bool("eat_fast") or false
 
-if minetest.get_modpath("cloudlands") and minetest.get_modpath("nether") then
-	minetest.register_craft({
-		output = "cloudlands:ancient_portalstone",
-		recipe = {
-			{"default:obsidian", "default:flint"}
-		}
-	})
-end
-
 if minetest.get_modpath("s_brewing") then
 	minetest.register_craft({
 		output = "s_brewing:boost",
