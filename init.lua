@@ -16,7 +16,7 @@ if minetest.get_modpath("s_brewing") then
 		recipe = {
 			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
 			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
-			{"default:goldblock", "default:goldblock", "default:goldblock"}
+			{"default:mese", "default:mese", "default:mese"}
 		}
 	})
 end
