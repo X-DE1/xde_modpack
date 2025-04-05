@@ -41,6 +41,14 @@ if eat_fast then
 	end)
 end
 
+minetest.register_craft({
+	output = "default:torch",
+	recipe = {
+		{"group:leaves"},
+		{"group:stick"}
+	}
+})
+
 if minetest.get_modpath("animalia") and minetest.get_modpath("x_farming") then
 	minetest.unregister_item("animalia:bucket_guano")
 end
