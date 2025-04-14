@@ -138,16 +138,6 @@ if minetest.get_modpath("x_farming") then
 		}
 	})
 
-	minetest.unregister_item("x_farming:cactus")
-	minetest.unregister_item("x_farming:large_cactus_with_fruit_seedling")
-	minetest.unregister_item("x_farming:cactus_fruit_item")
-	minetest.clear_craft({
-		output = 'x_farming:cactus_brick',
-		recipe = {
-			{ "x_farming:cactus_fruit_item", "x_farming:cactus_fruit_item"},
-			{ "x_farming:cactus_fruit_item", "x_farming:cactus_fruit_item"},
-		}
-	})
 	minetest.register_craft({
 		output = 'x_farming:cactus_brick',
 		recipe = {
