@@ -138,49 +138,23 @@ if minetest.get_modpath("x_farming") then
 		}
 	})
 
-	minetest.unregister_item("default:cactus")
-	minetest.unregister_item("default:large_cactus_seedling")
-
-	minetest.clear_registered_schematics({
-			name = "default:large_cactus",
-			deco_type = "schematic",
-			place_on = {"default:desert_sand"},
-			sidelen = 16,
-			noise_params = {
-				offset = -0.0003,
-				scale = 0.0009,
-				spread = {x = 200, y = 200, z = 200},
-				seed = 230,
-				octaves = 3,
-				persist = 0.6
-			},
-			biomes = {"desert"},
-			y_max = 31000,
-			y_min = 4,
-			schematic = minetest.get_modpath("default") .. "/schematics/large_cactus.mts",
-			flags = "place_center_x, place_center_z",
-			rotation = "random",
-		})
-	minetest.clear_registered_decorations({
-			name = "default:cactus",
-			deco_type = "simple",
-			place_on = {"default:desert_sand"},
-			sidelen = 16,
-			noise_params = {
-				offset = -0.0003,
-				scale = 0.0009,
-				spread = {x = 200, y = 200, z = 200},
-				seed = 230,
-				octaves = 3,
-				persist = 0.6
-			},
-			biomes = {"desert"},
-			y_max = 31000,
-			y_min = 4,
-			decoration = "default:cactus",
-			height = 2,
-			height_max = 5,
-		})
+	minetest.unregister_item("x_farming:cactus")
+	minetest.unregister_item("x_farming:large_cactus_with_fruit_seedling")
+	minetest.unregister_item("x_farming:cactus_fruit_item")
+	minetest.clear_craft({
+		output = 'x_farming:cactus_brick',
+		recipe = {
+			{ "x_farming:cactus_fruit_item", "x_farming:cactus_fruit_item"},
+			{ "x_farming:cactus_fruit_item", "x_farming:cactus_fruit_item"},
+		}
+	})
+	minetest.register_craft({
+		output = 'x_farming:cactus_brick',
+		recipe = {
+			{ "default:cactus", "default:cactus"},
+			{ "default:cactus", "default:cactus"},
+		}
+	})
 end
 
 if minetest.get_modpath("x_farming") and minetest.get_modpath("everness") then
