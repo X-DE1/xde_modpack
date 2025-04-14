@@ -16,7 +16,7 @@ if minetest.get_modpath("s_brewing") then
 		recipe = {
 			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
 			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
-			{"default:mese", "default:mese", "default:mese"}
+			{"default:goldblock", "default:goldblock", "default:goldblock"}
 		}
 	})
 end
@@ -103,6 +103,84 @@ if minetest.get_modpath("x_farming") then
 	minetest.unregister_item("x_farming:string")
 	minetest.unregister_item("x_farming:seed_cotton")
 	minetest.unregister_item("x_farming:string")
+
+	minetest.unregister_item("x_farming:pillow_red")
+	minetest.unregister_item("x_farming:pillow_blue")
+	minetest.unregister_item("x_farming:pillow_cyan")
+	minetest.unregister_item("x_farming:pillow_grey")
+	minetest.unregister_item("x_farming:pillow_pink")
+	minetest.unregister_item("x_farming:pillow_black")
+	minetest.unregister_item("x_farming:pillow_brown")
+	minetest.unregister_item("x_farming:pillow_green")
+	minetest.unregister_item("x_farming:pillow_white")
+	minetest.unregister_item("x_farming:pillow_orange")
+	minetest.unregister_item("x_farming:pillow_violet")
+	minetest.unregister_item("x_farming:pillow_yellow")
+	minetest.unregister_item("x_farming:pillow_magenta")
+	minetest.unregister_item("x_farming:pillow_dark_grey")
+	minetest.unregister_item("x_farming:pillow_dark_green")
+	minetest.unregister_item("x_farming:pillow_light_blue")
+
+	minetest.clear_craft({
+		output = 'x_farming:scarecrow',
+		recipe = {
+			{ '', 'x_farming:pumpkin_block', '' },
+			{ 'x_farming:barley_stack', 'group:pillow', 'x_farming:barley_stack' },
+			{ '', 'group:wood', '' },
+		}
+	})
+	minetest.register_craft({
+		output = 'x_farming:scarecrow',
+		recipe = {
+			{ '', 'x_farming:pumpkin_block', '' },
+			{ 'x_farming:barley_stack', 'group:wool', 'x_farming:barley_stack' },
+			{ '', 'group:wood', '' },
+		}
+	})
+
+	minetest.unregister_item("default:cactus")
+	minetest.unregister_item("default:large_cactus_seedling")
+
+	minetest.clear_registered_schematics({
+			name = "default:large_cactus",
+			deco_type = "schematic",
+			place_on = {"default:desert_sand"},
+			sidelen = 16,
+			noise_params = {
+				offset = -0.0003,
+				scale = 0.0009,
+				spread = {x = 200, y = 200, z = 200},
+				seed = 230,
+				octaves = 3,
+				persist = 0.6
+			},
+			biomes = {"desert"},
+			y_max = 31000,
+			y_min = 4,
+			schematic = minetest.get_modpath("default") .. "/schematics/large_cactus.mts",
+			flags = "place_center_x, place_center_z",
+			rotation = "random",
+		})
+	minetest.clear_registered_decorations({
+			name = "default:cactus",
+			deco_type = "simple",
+			place_on = {"default:desert_sand"},
+			sidelen = 16,
+			noise_params = {
+				offset = -0.0003,
+				scale = 0.0009,
+				spread = {x = 200, y = 200, z = 200},
+				seed = 230,
+				octaves = 3,
+				persist = 0.6
+			},
+			biomes = {"desert"},
+			y_max = 31000,
+			y_min = 4,
+			decoration = "default:cactus",
+			height = 2,
+			height_max = 5,
+		})
 end
 
 if minetest.get_modpath("x_farming") and minetest.get_modpath("everness") then
