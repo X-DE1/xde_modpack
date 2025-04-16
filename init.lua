@@ -1,6 +1,47 @@
 local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
 local eat_fast = minetest.settings:get_bool("eat_fast") or false
 
+if auto_eat_fast then
+	minetest.register_on_mods_loaded(function()
+		if minetest.settings:get_bool("touch_gui") then
+			tph_eating["eating_time"] = 0.001
+			tph_eating["eating_repeats"] = 6
+		end
+	end)
+end
+
+if eat_fast then
+	minetest.register_on_mods_loaded(function()
+		tph_eating["eating_time"] = 0.001
+		tph_eating["eating_repeats"] = 6
+	end)
+end
+
+beds.day_interval.finish = 0.78
+
+minetest.register_craft({
+	output = "default:torch",
+	recipe = {
+		{"group:leaves"},
+		{"group:stick"}
+	}
+})
+
+minetest.register_craft({
+	output = "default:wood",
+	recipe = {
+		{"default:dry_shrub"}
+	}
+})
+
+minetest.register_craft({
+	output = "default:dry_shrub",
+	recipe = {
+		{"group:stick", "group:stick"},
+		{"group:stick", "group:stick"}
+	}
+})
+
 if minetest.get_modpath("s_brewing") then
 	minetest.register_craft({
 		output = "s_brewing:boost",
@@ -24,30 +65,6 @@ end
 if minetest.get_modpath("s_potions_default") and minetest.get_modpath("stamina") then
 	minetest.unregister_item("s_potions_default:jump")
 end
-
-if auto_eat_fast then
-	minetest.register_on_mods_loaded(function()
-		if minetest.settings:get_bool("touch_gui") then
-			tph_eating["eating_time"] = 0.001
-			tph_eating["eating_repeats"] = 6
-		end
-	end)
-end
-
-if eat_fast then
-	minetest.register_on_mods_loaded(function()
-		tph_eating["eating_time"] = 0.001
-		tph_eating["eating_repeats"] = 6
-	end)
-end
-
-minetest.register_craft({
-	output = "default:torch",
-	recipe = {
-		{"group:leaves"},
-		{"group:stick"}
-	}
-})
 
 if minetest.get_modpath("animalia") and minetest.get_modpath("x_farming") then
 	minetest.unregister_item("animalia:bucket_guano")
@@ -145,6 +162,14 @@ if minetest.get_modpath("x_farming") then
 			{ "default:cactus", "default:cactus"},
 		}
 	})
+	
+	minetest.register_craft({
+		output = "x_farming:pumpkin_lantern",
+		recipe = {
+			{"x_farming:pumpkin_block"},
+			{"group:torch"}
+		}
+	})
 end
 
 if minetest.get_modpath("x_farming") and minetest.get_modpath("everness") then
@@ -158,5 +183,12 @@ if minetest.get_modpath("x_farming") and minetest.get_modpath("everness") then
 		y_max = 31000,
 		y_min = 1,
 		decoration = {"farming:cotton_wild"}
+	})
+	minetest.register_craft({
+		output = "everness:cursed_pumpkin_lantern",
+		recipe = {
+			{"x_farming:pumpkin_block"},
+			{"everness:mineral_torch"}
+		}
 	})
 end
