@@ -65,6 +65,14 @@ if minetest.get_modpath("comboblock") then
 	end)
 end
 
+if minetest.get_modpath("invisiblocks") then
+	minetest.clear_craft({output = "invisiblocks:show_stick"})
+	minetest.clear_craft({output = "invisiblocks:barrier"})
+	minetest.clear_craft({output = "invisiblocks:mob_wall"})
+	minetest.clear_craft({output = "invisiblocks:light"})
+	minetest.override_item("invisiblocks:show_stick", {groups={}})
+end
+
 if minetest.get_modpath("s_brewing") then
 	minetest.register_craft({
 		output = "s_brewing:boost",
