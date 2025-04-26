@@ -1,6 +1,6 @@
 # X-DE Modpack
 
-Add mods to fix all kinds of Minetest issues, such as not seeing what players are holding, moving your head, breaking furnaces or chests with things inside, etc. And I modify the optional mods to my liking.
+Add mods to makes Minetest have more content and encourages the player to constantly gather food and create tools to attack hunger and monsters.
 
 ## Installation
 
