@@ -139,14 +139,15 @@ if minetest.get_modpath("x_farming") then
 		}
 	})
 
-	minetest.unregister_item("x_farming:cotton_8")
-	minetest.unregister_item("x_farming:cotton_7")
-	minetest.unregister_item("x_farming:cotton_6")
-	minetest.unregister_item("x_farming:cotton_5")
-	minetest.unregister_item("x_farming:cotton_4")
-	minetest.unregister_item("x_farming:cotton_3")
-	minetest.unregister_item("x_farming:cotton_2")
-	minetest.unregister_item("x_farming:cotton_1")
+	minetest.override_item("x_farming:cotton_1", {drop = "farming:seed_cotton"})
+	minetest.override_item("x_farming:cotton_2", {drop = "farming:seed_cotton"})
+	minetest.override_item("x_farming:cotton_3", {drop = "farming:seed_cotton"})
+	minetest.override_item("x_farming:cotton_4", {drop = "farming:seed_cotton"})
+	minetest.override_item("x_farming:cotton_5", {drop = "farming:seed_cotton"})
+	minetest.override_item("x_farming:cotton_6", {drop = "farming:seed_cotton"})
+	minetest.override_item("x_farming:cotton_7", {drop = "farming:seed_cotton"})
+	minetest.override_item("x_farming:cotton_8", {drop = "farming:seed_cotton"})
+	
 	minetest.unregister_item("x_farming:cotton")
 	minetest.unregister_item("x_farming:string")
 	minetest.unregister_item("x_farming:seed_cotton")
