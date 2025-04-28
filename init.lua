@@ -130,6 +130,20 @@ if minetest.get_modpath("animalia") and minetest.get_modpath("mobs") then
 end
 
 if minetest.get_modpath("x_farming") then
+
+	minetest.register_craft({
+		output = "x_farming:seed_pumpkin 2",
+		recipe = {
+			{"x_farming:pumpkin_block"}
+		}
+	})
+	minetest.register_craft({
+		output = "x_farming:seed_melon",
+		recipe = {
+			{"x_farming:melon"}
+		}
+	})
+	
 	minetest.register_craft({
 		output = "x_farming:seed_icefishing",
 		recipe = {
