@@ -133,6 +133,10 @@ if minetest.get_modpath("animalia") and minetest.get_modpath("mobs") then
 	minetest.unregister_item("mobs:meatblock")
 end
 
+if minetest.get_modpath("x_spawners_api") then
+	minetest.unregister_item("mobs:spawner")
+end
+
 if minetest.get_modpath("x_farming") then
 
 	minetest.register_craft({
