@@ -42,8 +42,16 @@ minetest.register_craft({
 	}
 })
 
+local nodes = minetest.registered_nodes
+
+for clave, valor in pairs(nodes) do
+	if string.find(clave, "trapdoor") then
+		minetest.override_item(clave, {climbable = true})
+	end
+end
+
 if minetest.get_modpath("comboblock") then
-	for clave, valor in pairs(minetest.registered_nodes) do
+	for clave, valor in pairs(nodes) do
 		if string.sub(clave, 1, 10) == "comboblock" then
 			local grupos_str = ""
 			for clave, number in pairs(valor.groups) do
