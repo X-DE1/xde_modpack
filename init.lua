@@ -1,21 +1,3 @@
-local auto_eat_fast = minetest.settings:get_bool("auto_eat_fast") ~= false
-local eat_fast = minetest.settings:get_bool("eat_fast") or false
-
-if auto_eat_fast then
-	minetest.register_on_mods_loaded(function()
-		if minetest.settings:get_bool("touch_gui") then
-			tph_eating["eating_time"] = 0.001
-			tph_eating["eating_repeats"] = 6
-		end
-	end)
-end
-
-if eat_fast then
-	minetest.register_on_mods_loaded(function()
-		tph_eating["eating_time"] = 0.001
-		tph_eating["eating_repeats"] = 6
-	end)
-end
 
 beds.day_interval.finish = 0.78
 
