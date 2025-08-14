@@ -1,5 +1,0 @@
-#    Disable or enable eat fast when touch screen is set
-auto_eat_fast (Auto eat fast) bool true
-
-#    Disable or enable eat fast
-eat_fast (Eat fast) bool false
