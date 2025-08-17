@@ -63,26 +63,6 @@ if minetest.get_modpath("invisiblocks") then
 	minetest.override_item("invisiblocks:show_stick", {groups={}})
 end
 
-if minetest.get_modpath("s_brewing") then
-	minetest.register_craft({
-		output = "s_brewing:boost",
-		recipe = {
-			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
-			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
-			{"default:tinblock", "default:tinblock", "default:tinblock"}
-		}
-	})
-	
-	minetest.register_craft({
-		output = "s_brewing:stand",
-		recipe = {
-			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
-			{"vessels:glass_bottle", "vessels:glass_bottle", "vessels:glass_bottle"},
-			{"default:goldblock", "default:goldblock", "default:goldblock"}
-		}
-	})
-end
-
 if minetest.get_modpath("animalia") and minetest.get_modpath("x_farming") then
 	minetest.unregister_item("animalia:bucket_guano")
 end
@@ -113,10 +93,6 @@ if minetest.get_modpath("animalia") and minetest.get_modpath("mobs") then
 	minetest.unregister_item("mobs:meat")
 	minetest.unregister_item("mobs:meatblock_raw")
 	minetest.unregister_item("mobs:meatblock")
-end
-
-if minetest.get_modpath("x_spawners_api") then
-	minetest.unregister_item("mobs:spawner")
 end
 
 if minetest.get_modpath("x_farming") then
