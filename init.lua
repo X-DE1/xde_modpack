@@ -32,29 +32,6 @@ for clave, valor in pairs(nodes) do
 	end
 end
 
-if minetest.get_modpath("comboblock") then
-	for clave, valor in pairs(nodes) do
-		if string.sub(clave, 1, 10) == "comboblock" then
-			local grupos_str = ""
-			for clave, number in pairs(valor.groups) do
-				if clave == "oddly_breakable_by_hand" or clave == "crumbly" or clave == "cracky" or clave == "choppy" or clave == "snappy" or clave == "explody" or clave == "dig_immediate" or clave == "not_in_creative_inventory" or clave == "flammable" then
-					if grupos_str ~= "" then
-						grupos_str = grupos_str .. ", "
-					end
-					grupos_str = grupos_str .. clave .. " = " .. tostring(number)
-				end
-			end
-			local resultado = 'minetest.override_item("' .. clave .. '", {groups={' .. grupos_str .. '}})'
-			loadstring(resultado)()
-		end
-	end
-	minetest.register_on_newplayer(function(player)
-		minetest.after(0.1, function()
-			player:get_inventory():remove_item("main", "comboblock:help 1")
-		end)
-	end)
-end
-
 if minetest.get_modpath("invisiblocks") then
 	minetest.clear_craft({output = "invisiblocks:show_stick"})
 	minetest.clear_craft({output = "invisiblocks:barrier"})
