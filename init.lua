@@ -185,3 +185,25 @@ if minetest.get_modpath("x_farming") and minetest.get_modpath("everness") then
 		}
 	})
 end
+
+if minetest.get_modpath("screwdriver2") then
+	minetest.unregister_item("screwdriver:screwdriver")
+end
+
+if minetest.get_modpath("xdecor") then
+	if minetest.get_modpath("mesecons") then
+		minetest.unregister_item("xdecor:lever_off")
+		minetest.unregister_item("xdecor:lever_on")
+		minetest.unregister_item("xdecor:pressure_wood_off")
+		minetest.unregister_item("xdecor:pressure_wood_on")
+		minetest.unregister_item("xdecor:pressure_stone_off")
+		minetest.unregister_item("xdecor:pressure_stone_on")
+	end
+	if minetest.get_modpath("x_enchanting") then
+		minetest.unregister_item("xdecor:enchantment_table")
+	end
+	if minetest.get_modpath("x_farming") then
+		minetest.unregister_item("xdecor:hive")
+		minetest.unregister_item("xdecor:honey")
+	end
+end
