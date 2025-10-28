@@ -206,4 +206,7 @@ if minetest.get_modpath("xdecor") then
 		minetest.unregister_item("xdecor:hive")
 		minetest.unregister_item("xdecor:honey")
 	end
+	if minetest.get_modpath("mobs") then
+		minetest.unregister_item("xdecor:cobweb")
+	end
 end
