@@ -37,7 +37,6 @@ if minetest.get_modpath("invisiblocks") then
 	minetest.clear_craft({output = "invisiblocks:barrier"})
 	minetest.clear_craft({output = "invisiblocks:mob_wall"})
 	minetest.clear_craft({output = "invisiblocks:light"})
-	minetest.override_item("invisiblocks:show_stick", {groups={}})
 end
 
 if minetest.get_modpath("animalia") and minetest.get_modpath("x_farming") then
